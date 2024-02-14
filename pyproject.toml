@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "jsony"
+version = "0.1.0"
+description = "Usefull json functions tool"
+authors = ["yassun7010 <yassun7010@outlook.com>"]
+readme = "README.md"
+
+[tool.taskipy.tasks]
+format = "ruff format ."
+lint = "ruff check ."
+typecheck = "pyright src/** tests/**"
+test = "pytest"
+ci = "task format && task lint && task typecheck && task test"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typing-extensions = "^4.9.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+taskipy = "^1.12.2"
+pyright = "^1.1.350"
+ipython = "^8.21.0"
+ruff = "^0.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
